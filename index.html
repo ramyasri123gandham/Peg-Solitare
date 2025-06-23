@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Peg Solitaire</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="header">
+    <div class="controls">
+      <button id="darkModeToggle">🌙</button>
+      <button id="fullscreenToggle">🖵</button>
+    </div>
+    <h1>Peg Solitaire</h1>
+    <button id="howToPlayBtn">❓</button>
+  </div>
+
+  <div class="board-container">
+    <div id="board"></div>
+  </div>
+
+  <div class="actions">
+    <button onclick="resetGame()">Reset</button>
+    <button onclick="undoMove()">Undo</button>
+    <p id="moveCounter">Moves: 0</p>
+  </div>
+
+  <!-- Game Over Dialog -->
+  <div id="gameOverDialog" class="modal">
+    <div class="modal-content">
+      <h2>Game Over!</h2>
+      <p>No more moves left.</p>
+      <button onclick="resetGame()">Play Again</button>
+    </div>
+  </div>
+
+  <!-- Win Dialog -->
+  <div id="winDialog" class="modal">
+    <div class="modal-content">
+      <h2>You Won!</h2>
+      <p>Congratulations!</p>
+      <button onclick="resetGame()">Play Again</button>
+    </div>
+  </div>
+
+  <!-- How to Play Modal -->
+  <div id="howToPlayModal" class="modal">
+    <div class="modal-content">
+      <h2>How to Play</h2>
+      <p>Jump one peg over another into an empty hole, removing the jumped peg. Try to end with just one peg on the board!</p>
+      <button onclick="closeHowToPlay()">OK</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
